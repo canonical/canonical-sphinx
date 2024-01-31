@@ -1,6 +1,6 @@
-# This file is part of starcraft.
+# This file is part of canonical-sphinx.
 #
-# Copyright 2023 Canonical Ltd.
+# Copyright 2024 Canonical Ltd.
 #
 # This program is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License version 3, as published
@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
-"""Starcraft package demo."""
+"""Sphinx configuration, extension and theme for Canonical documentation."""
 from typing import List, Optional, Any
 
 try:
@@ -22,7 +22,7 @@ except ImportError:  # pragma: no cover
     from importlib.metadata import version, PackageNotFoundError
 
     try:
-        __version__ = version("starcraft")
+        __version__ = version("canonical-sphinx")
     except PackageNotFoundError:
         __version__ = "dev"
 

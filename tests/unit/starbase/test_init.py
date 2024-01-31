@@ -17,17 +17,17 @@
 # pyright: reportFunctionMemberAccess=false
 from unittest import mock
 
-import starcraft
+import canonical_sphinx
 
 
 def test_version():
-    assert starcraft.__version__ is not None
+    assert canonical_sphinx.__version__ is not None
 
 
 def test_hello(mocker):
     mocker.patch("builtins.print")
 
-    starcraft.hello()
+    canonical_sphinx.hello()
 
     print.assert_called_once_with("Hello *craft team!")
 
@@ -35,7 +35,7 @@ def test_hello(mocker):
 def test_hello_people(mocker):
     mocker.patch("builtins.print")
 
-    starcraft.hello(["people"])
+    canonical_sphinx.hello(["people"])
 
     print.assert_has_calls(
         [

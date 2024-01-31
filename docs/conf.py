@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "starcraft"
-copyright = "2023, Canonical"
+project = "canonical-sphinx"
+copyright = "2024, Canonical"
 author = "Canonical"
 
 # region General configuration
@@ -57,6 +57,6 @@ always_document_param_types = True
 
 # Github config
 github_username = "canonical"
-github_repository = "starcraft-base"
+github_repository = "canonical-sphinx"
 
 # endregion

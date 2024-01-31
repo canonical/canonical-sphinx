@@ -1,5 +1,5 @@
 [project]
-name = "starcraft"
+name = "canonical-sphinx"
 dynamic = ["version", "readme"]
 dependencies = [
 
@@ -13,7 +13,7 @@ classifiers = [
 requires-python = ">=3.8"
 
 [project.scripts]
-starcraft-hello = "starcraft:hello"
+canonical-sphinx-hello = "canonical_sphinx:hello"
 
 [project.optional-dependencies]
 dev = [
@@ -55,7 +55,7 @@ build-backend = "setuptools.build_meta"
 readme = {file = "README.rst"}
 
 [tool.setuptools_scm]
-write_to = "starcraft/_version.py"
+write_to = "canonical_sphinx/_version.py"
 # the version comes from the latest annotated git tag formatted as 'X.Y.Z'
 # version scheme:
 #   - X.Y.Z.post<commits since tag>+g<hash>.d<%Y%m%d>
@@ -72,7 +72,7 @@ version_scheme = "post-release"
 git_describe_command = "git describe --dirty --long --match '[0-9]*.[0-9]*.[0-9]*' --exclude '*[^0-9.]*'"
 
 [tool.setuptools.packages.find]
-include = ["*craft*"]
+include = ["canonical_sphinx"]
 namespaces = false
 
 [tool.black]
@@ -109,7 +109,7 @@ exclude_also = [
 ]
 
 [tool.pyright]
-strict = ["starcraft"]
+strict = ["canonical_sphinx"]
 pythonVersion = "3.8"
 pythonPlatform = "Linux"
 exclude = [
@@ -136,7 +136,7 @@ disallow_untyped_decorators = true
 disallow_any_generics = true
 
 [[tool.mypy.overrides]]
-module = ["starcraft.*"]
+module = ["canonical_sphinx.*"]
 disallow_untyped_defs = true
 no_implicit_optional = true
 
@@ -147,7 +147,7 @@ strict = false
 [tool.ruff]
 line-length = 88
 target-version = "py38"
-src = ["starcraft", "tests"]
+src = ["canonical_sphinx", "tests"]
 extend-exclude = [
     "docs",
     "__pycache__",
@@ -165,7 +165,7 @@ select = [  # Base linting rule selections.
     "D",  # Implement pydocstyle checking as well.
     "UP",  # Pyupgrade - note that some of are excluded below due to Python versions
     "YTT",  # flake8-2020: Misuse of `sys.version` and `sys.version_info`
-    "ANN",  # Type annotations.
+    "ANN",  # Type annotations
     "ASYNC",  # Catching blocking calls in async functions
     # flake8-bandit: security testing. https://docs.astral.sh/ruff/rules/#flake8-bandit-s
     # https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
