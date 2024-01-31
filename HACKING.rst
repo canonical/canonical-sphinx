@@ -1,8 +1,8 @@
-*********
-Starcraft
-*********
+****************
+canonical-sphinx
+****************
 
-Welcome to Starcraft! We hope this document helps you get started. Before
+Welcome to canonical-sphinx! We hope this document helps you get started. Before
 contributing any code, please sign the `Canonical contributor licence
 agreement`_.
 
