@@ -38,12 +38,12 @@ dev = [
 lint = [
     "black==24.2.0",
     "codespell[toml]==2.2.6",
-    "ruff==0.2.2",
+    "ruff==0.3.0",
     "yamllint==1.35.1"
 ]
 types = [
     "mypy[reports]==1.8.0",
-    "pyright==1.1.351",
+    "pyright==1.1.352",
 ]
 docs = [
     "sphinx-lint",
@@ -52,7 +52,7 @@ docs = [
 
 [build-system]
 requires = [
-    "setuptools==69.1.0",
+    "setuptools==69.1.1",
     "setuptools_scm[toml]>=7.1"
 ]
 build-backend = "setuptools.build_meta"
