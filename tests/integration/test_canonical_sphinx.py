@@ -14,6 +14,7 @@
 """Integration tests for building documentation with the extension and theme."""
 import shutil
 import subprocess
+from datetime import datetime
 from pathlib import Path
 
 import bs4
@@ -57,7 +58,8 @@ def test_canonical_sphinx(example_project):
 
     # Copyright
     copyright_ = soup.find("div", {"class": "copyright"}).string.strip()
-    assert copyright_ == "Copyright © 2099, Example Project Authors"
+    year = datetime.today().year
+    assert copyright_ == f"Copyright © {year}, Example Project Authors"
 
     # Logo
     logo = soup.find("a", {"class": "p-logo"})

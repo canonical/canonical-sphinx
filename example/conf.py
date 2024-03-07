@@ -12,6 +12,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Example project to showcase the extension's configuration."""
+from datetime import datetime
 
 ############################################################
 ### Project information
@@ -39,8 +40,7 @@ html_title = project + " Docs"
 # curl -H 'Authorization: token <TOKEN>' \
 #   -H 'Accept: application/vnd.github.v3.raw' \
 #   https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
-
-copyright = f"2099, {author}"
+copyright = f"{datetime.today().year}, {author}"
 
 # Set the path to your own static assets here
 html_static_path = ["_static"]
