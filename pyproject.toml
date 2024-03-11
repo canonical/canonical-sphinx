@@ -47,7 +47,7 @@ types = [
 ]
 docs = [
     "sphinx-lint",
-    "sphinx-autobuild<2024.02.04" # 2024.02.04 drops support for Python 3.8
+    "sphinx-autobuild<2024.2.5" # 2024.02.04 drops support for Python 3.8
 ]
 
 [build-system]
