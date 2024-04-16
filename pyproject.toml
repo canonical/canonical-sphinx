@@ -5,7 +5,7 @@ dependencies = [
     "sphinx>=7.1.2,<8",
     "furo",
     "linkify-it-py",
-    "lxd-sphinx-extensions",
+    "canonical-sphinx-extensions",
     "myst-parser",
     "pyspelling",
     "sphinx-copybutton",
