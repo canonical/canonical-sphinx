@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
-
+import os
 from pathlib import Path
 from typing import Any, Dict
 
@@ -77,9 +77,42 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
         ],
     )
 
+    # The URL prefix for the notfound extension depends on whether the documentation uses versions.
+    # For documentation on documentation.ubuntu.com, we also must add the slug.
+    url_version = ""
+    url_lang = ""
+
+    # Determine if the URL uses versions and language
+    if (
+        "READTHEDOCS_CANONICAL_URL" in os.environ
+        and os.environ["READTHEDOCS_CANONICAL_URL"]
+    ):
+        url_parts = os.environ["READTHEDOCS_CANONICAL_URL"].split("/")
+
+        if (
+            len(url_parts) >= 2  # noqa: PLR2004 (magic value)
+            and "READTHEDOCS_VERSION" in os.environ
+            and os.environ["READTHEDOCS_VERSION"] == url_parts[-2]
+        ):
+            url_version = url_parts[-2] + "/"
+
+        if (
+            len(url_parts) >= 3  # noqa: PLR2004 (magic value)
+            and "READTHEDOCS_LANGUAGE" in os.environ
+            and os.environ["READTHEDOCS_LANGUAGE"] == url_parts[-3]
+        ):
+            url_lang = url_parts[-3] + "/"
+
+    # Set notfound_urls_prefix to the slug (if defined) and the version/language affix
     slug = config.slug
     if slug:
-        config.notfound_urls_prefix = "/" + slug + "/en/latest/"
+        notfound_urls_prefix = "/" + slug + "/" + url_lang + url_version
+    elif len(url_lang + url_version) > 0:
+        notfound_urls_prefix = "/" + url_lang + url_version
+    else:
+        notfound_urls_prefix = ""
+
+    config.notfound_urls_prefix = notfound_urls_prefix
 
     config.html_theme = "canonical_sphinx_theme"
     config.html_last_updated_fmt = ""
