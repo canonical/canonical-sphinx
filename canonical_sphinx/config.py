@@ -121,7 +121,8 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
     if config.html_title == "":
         config.html_theme_options = {"sidebar_hide_name": True}
 
-    theme_assets = Path(__file__).parent / "theme/static"
+    theme_dir = Path(__file__).parent / "theme"
+    theme_assets = theme_dir / "static"
 
     config.html_static_path.append(str(theme_assets))
 
@@ -138,6 +139,12 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
     config.html_css_files.extend(extra_css)
 
     html_js_files = ["header-nav.js"]
+
+    # Issue: We don't have access to the builder here yet
+    # Setting templates_path for epub makes the build fail
+    # if builder == "dirhtml" or builder == "html":
+    config.templates_path.append(str(theme_dir / "templates"))
+    config.notfound_template = "404.html"
 
     html_context = config.html_context
 
