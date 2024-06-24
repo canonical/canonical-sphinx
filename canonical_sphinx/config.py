@@ -42,6 +42,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         "canonical.related-links",
         "canonical.custom-rst-roles",
         "canonical.terminal-output",
+        "canonical.contributor-listing",
         "sphinx_copybutton",
         "sphinxext.opengraph",
         "myst_parser",
@@ -159,6 +160,7 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
         ("github_issues", "enabled"),
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
+        ("display_contributors", True),
     ]
 
     for value, default in values_and_defaults:
