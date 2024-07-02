@@ -28,10 +28,10 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value(
         "disable_feedback_button",
         default=False,
-        rebuild=True,
+        rebuild="env",
         types=bool,
     )
-    app.add_config_value("slug", default="", rebuild=True, types=str)
+    app.add_config_value("slug", default="", rebuild="env", types=str)
 
     # These are the extra extensions that we need.
     extra_extensions = [
