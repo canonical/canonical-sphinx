@@ -74,6 +74,8 @@ html_context = {
     # Controls the existence of Previous / Next buttons at the bottom of pages
     # Valid options: none, prev, next, both
     "sequential_nav": "none",
+    # Controls whether to display the contributors for each file
+    "display_contributors": False,
 }
 
 # If your project is on documentation.ubuntu.com, specify the project
