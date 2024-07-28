@@ -297,6 +297,16 @@ button.version_select {
 
 .available_versions a:hover {background-color: var(--color-sidebar-item-background--current)}
 
+/** Suppress link underlines outside on-hover **/
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:visited:hover {
+    text-decoration: underline;
+}
+
 .show {display:block;}
 
 /** Fix for nested numbered list - the nested list is lettered **/
@@ -358,4 +368,14 @@ p code.literal {
 /* Use the general admonition font size for inline code */
 .admonition p code.literal {
     font-size: var(--admonition-font-size);
+}
+
+.highlight .s,
+.highlight .s1,
+.highlight .s2 {
+    color: #3F8100;
+}
+
+.highlight .o {
+    color: #BB5400;
 }
