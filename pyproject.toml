@@ -2,7 +2,7 @@
 name = "canonical-sphinx"
 dynamic = ["version", "readme"]
 dependencies = [
-    "sphinx>=7.1.2,<8",
+    "sphinx>=8.0.2,<9",
     "furo",
     "linkify-it-py",
     "canonical-sphinx-extensions",
