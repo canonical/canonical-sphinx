@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
-from typing import List, Optional, Any
+from typing import List, Optional, Any, Dict
 
 from sphinx.application import Sphinx
 
@@ -37,9 +37,13 @@ def hello(people: Optional[List[Any]] = None) -> None:
             print(f"Hello {person}!")
 
 
-def setup(app: Sphinx) -> None:
+def setup(app: Sphinx) -> Dict[str, Any]:
     """Configure the main extension and theme."""
     app.setup_extension("canonical_sphinx.config")
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
 
 
 __all__ = ["__version__", "setup"]
