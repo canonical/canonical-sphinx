@@ -36,7 +36,7 @@ dev = [
     "pytest-mock==3.14.0",
 ]
 lint = [
-    "black==24.4.2",
+    "black==24.8.0",
     "codespell[toml]==2.3.0",
     "ruff==0.5.7",
     "yamllint==1.35.1"
