@@ -17,8 +17,6 @@ requires-python = ">=3.8"
 [project.scripts]
 canonical-sphinx-hello = "canonical_sphinx:hello"
 
-# Moving extended version to optional install, but first iteration will need to use previous full install
-# Once deployed on pypi, can change canonical-sphinx==0.1.0 to canonical-sphinx[full]
 [project.optional-dependencies]
 full = [
     "linkify-it-py",
