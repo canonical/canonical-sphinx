@@ -80,7 +80,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
+def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
     """Read user-provided values and setup defaults."""
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
@@ -178,7 +178,7 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
         ("display_contributors", True),
     ]
 
-    has_contributor_listing = "canonical.contributor-listing" in _app.extensions
+    has_contributor_listing = "canonical.contributor-listing" in app.extensions
 
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
