@@ -4,17 +4,7 @@ dynamic = ["version", "readme"]
 dependencies = [
     "sphinx>=7.1.2,<8",
     "furo",
-    "linkify-it-py",
-    "canonical-sphinx-extensions",
     "myst-parser",
-    "pyspelling",
-    "sphinx-copybutton",
-    "sphinx-design",
-    "sphinx-notfound-page",
-    "sphinx-reredirects",
-    "sphinx-tabs",
-    "sphinxcontrib-jquery",
-    "sphinxext-opengraph",
 ]
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -28,7 +18,20 @@ requires-python = ">=3.8"
 canonical-sphinx-hello = "canonical_sphinx:hello"
 
 [project.optional-dependencies]
+full = [
+    "linkify-it-py",
+    "canonical-sphinx-extensions",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinx-notfound-page",
+    "sphinx-reredirects",
+    "sphinx-tabs",
+    "sphinxcontrib-jquery",
+    "sphinxext-opengraph",
+    "pyspelling",
+]
 dev = [
+    "canonical-sphinx[full]",
     "build",
     "coverage[toml]==7.6.1",
     "pytest==8.3.2",
@@ -36,16 +39,19 @@ dev = [
     "pytest-mock==3.14.0",
 ]
 lint = [
+    "canonical-sphinx[full]",
     "black==24.8.0",
     "codespell[toml]==2.3.0",
     "ruff==0.5.7",
     "yamllint==1.35.1"
 ]
 types = [
+    "canonical-sphinx[full]",
     "mypy[reports]==1.11.2",
     "pyright==1.1.378",
 ]
 docs = [
+    "canonical-sphinx[full]",
     "sphinx-lint",
     "sphinx-autobuild<2024.2.5" # 2024.02.04 drops support for Python 3.8
 ]
