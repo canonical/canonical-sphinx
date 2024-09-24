@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
+import importlib.util
 import os
 from pathlib import Path
 from typing import Any, Dict
@@ -33,8 +34,11 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     )
     app.add_config_value("slug", default="", rebuild="env", types=str)
 
-    # These are the extra extensions that we need.
     extra_extensions = [
+        "myst_parser",
+    ]
+
+    optional_packages = [
         "sphinx_design",
         "sphinx_tabs.tabs",
         "sphinx_reredirects",
@@ -45,10 +49,21 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         "canonical.contributor-listing",
         "sphinx_copybutton",
         "sphinxext.opengraph",
-        "myst_parser",
         "sphinxcontrib.jquery",
         "notfound.extension",
     ]
+
+    for package in optional_packages:
+        try:
+            if importlib.util.find_spec(package) is not None:
+                extra_extensions.append(package)
+            else:
+                print(f"{package} not found.\n{package} will not be configured.")
+        except ModuleNotFoundError:  # noqa: PERF203
+            print(f"{package} not found.\n{package} will not be configured.")
+
+    # These are the extra extensions that we need.
+
     for ext in extra_extensions:
         app.setup_extension(ext)
 
@@ -65,7 +80,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
+def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
     """Read user-provided values and setup defaults."""
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
@@ -163,7 +178,11 @@ def config_inited(_app: Sphinx, config: Any) -> None:  # noqa: ANN401
         ("display_contributors", True),
     ]
 
+    has_contributor_listing = "canonical.contributor-listing" in app.extensions
+
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
+
+    html_context["has_contributor_listing"] = has_contributor_listing
 
     config.html_js_files.extend(html_js_files)

@@ -142,3 +142,6 @@ dmypy.json
 
 # Visual Studio Code
 .vscode/
+
+# asdf
+.tool-versions

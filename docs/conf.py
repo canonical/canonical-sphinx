@@ -11,8 +11,6 @@ extensions = [
     "canonical_sphinx",
 ]
 
-show_authors = False
-
 html_context = {
     "product_page": "github.com/canonical/canonical-sphinx",
     "github_url": "https://github.com/canonical/canonical-sphinx",
