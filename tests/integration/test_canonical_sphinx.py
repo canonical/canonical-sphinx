@@ -21,7 +21,7 @@ import bs4
 import pytest
 
 
-@pytest.fixture()
+@pytest.fixture
 def example_project(request, tmp_path) -> Path:
     project_root = request.config.rootpath
     example_dir = project_root / "example"
