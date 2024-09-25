@@ -5,6 +5,7 @@ dependencies = [
     "sphinx>=7.1.2,<8",
     "furo",
     "myst-parser",
+    "linkify-it-py",
 ]
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -19,7 +20,6 @@ canonical-sphinx-hello = "canonical_sphinx:hello"
 
 [project.optional-dependencies]
 full = [
-    "linkify-it-py",
     "canonical-sphinx-extensions",
     "sphinx-copybutton",
     "sphinx-design",
