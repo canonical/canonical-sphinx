@@ -11,7 +11,8 @@ body {
     --color-background-hover: #f2f2f2;
     --color-brand-primary: #111;
     --color-brand-content: #06C;
-    --color-api-background: #E3E3E3;
+    --color-api-background: var(--color-code-background);
+    --color-api-background--hover: var(--color-sidebar-item-background--hover);
     --color-inline-code-background: rgba(0,0,0,.03);
     --color-sidebar-link-text: #111;
     --color-sidebar-item-background--current: #ebebeb;
@@ -60,7 +61,6 @@ body {
     }
     @media (prefers-color-scheme: dark) {
         body:not([data-theme="light"]) {
-            --color-api-background: #A4A4A4;
             --color-code-background: #202020;
             --color-code-foreground: #d0d0d0;
             --color-foreground-secondary: var(--color-foreground-primary);
