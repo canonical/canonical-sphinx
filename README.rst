@@ -57,10 +57,10 @@ Using a subset of packages
 
 canonical-sphinx will identify and configure defaults for any package from the ``[full]`` installation.
 
-For example, using the following ``requirements.txt`` file:
+For example, using the following ``requirements.txt`` file::
 
-    canonical-sphinx
-    sphinx-copybutton
+    canonical-sphinx  
+    sphinx-copybutton  
     sphinxcontrib-jquery
 
 With `canonical-sphinx` included in your project's `conf.py` `extensions`::
