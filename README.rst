@@ -7,15 +7,21 @@ Extension and theme to create great Canonical-branded documentation.
 Description
 ***********
 
-This project is a Sphinx extension that simplifies the installation of a group of Sphinx extensions recommended by Canonical, and provides a design override of the Furo theme, for the creation of Canonical branded documentation.
+This project is a Sphinx extension that simplifies the installation of a group of Sphinx extensions recommended by Canonical,
+and provides a design override of the Furo theme, for the creation of Canonical branded documentation.
 
-This extension provides a minimal installation by default, and also offers a ``[full]`` optional installation which provides signficiant additional functionality for Sphinx based documentation. This extension, when installed and added to `extensions` within the configuration file of a Sphinx deployment "bundles" various extensions together and sets default configuration values, eliminating the need to list the extensions in the ``extensions`` section of the Sphinx configuration and reducing the need to configure the bundled extensions.
+This extension provides a minimal installation by default, and also offers a ``[full]`` optional installation which provides
+signficiant additional functionality for Sphinx based documentation. This extension, when installed and added to ``extensions``
+within the configuration file of a Sphinx deployment "bundles" various extensions together and sets default configuration values,
+eliminating the need to list the extensions in the ``extensions`` section of the Sphinx configuration and reducing the need to
+configure the bundled extensions.
 
 The default extensions bundled into canonical-sphinx are:
 
 * `Furo <https://github.com/pradyunsg/furo>`_
 * `MyST Parser <https://myst-parser.readthedocs.io/en/latest/>`_
-* `linkify-it-py <https://pypi.org/project/linkify-it-py/>`_ - required for `specific MyST Parser functionality <https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#linkify>`_.
+* `linkify-it-py <https://pypi.org/project/linkify-it-py/>`_ - required for
+`specific MyST Parser functionality <https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#linkify>`_.
 
 The optional extensions bundled into canonical-sphinx using the ``[full]`` optional installation are:
 
@@ -50,7 +56,9 @@ To use canonical-sphinx in your project:
 
     **Do not add any of the bundled extensions to this configuration.** They will be automatically added when Sphinx generates documentation.
 
-3.  (Optional) Add additional configuration to your `Sphinx configuration file <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-extensions>`_ if you need to overwrite any defaults configured by canonical-sphinx.
+3.  (Optional) Add additional configuration to your
+`Sphinx configuration file <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-extensions>`_
+if you need to overwrite any defaults configured by canonical-sphinx.
 
 Using a subset of packages
 ==========================
@@ -63,13 +71,14 @@ For example, using the following ``requirements.txt`` file::
     sphinx-copybutton  
     sphinxcontrib-jquery
 
-With `canonical-sphinx` included in your project's `conf.py` `extensions`::
+With ``canonical-sphinx`` included in your project's ``conf.py`` ``extensions``::
 
     extensions = [
         "canonical_sphinx",
     ]
 
-Sphinx will configure and add defaults for ``sphinx-copybutton`` and ``sphinxcontrib-jquery``. The rest of the extensions from the optional ``[full]`` installation will be ignored.
+Sphinx will configure and add defaults for ``sphinx-copybutton`` and ``sphinxcontrib-jquery``. The rest of the extensions from the optional
+``[full]`` installation will be ignored.
 
 .. _EditorConfig: https://editorconfig.org/
 .. _pre-commit: https://pre-commit.com/
