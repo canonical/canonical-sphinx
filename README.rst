@@ -8,13 +8,13 @@ Description
 ***********
 
 This project is a Sphinx extension that simplifies the installation of a group
-of Sphinx extensions recommended by Canonical, and provides a design override of
-the Furo theme, for the creation of Canonical branded documentation.
+of Sphinx extensions recommended by Canonical. It also provides a design override of
+the Furo theme for the creation of Canonical branded documentation.
 
 This extension provides a minimal installation by default, and also offers a
 ``[full]`` optional installation which provides significant additional
 functionality for Sphinx based documentation. This extension, when installed and
-added to ``extensions`` within the configuration file of a Sphinx deployment
+added to ``extensions`` within the configuration file of a Sphinx deployment,
 "bundles" various extensions together and sets default configuration values,
 eliminating the need to list the extensions in the ``extensions`` section of the
 Sphinx configuration and reducing the need to configure the bundled extensions.
