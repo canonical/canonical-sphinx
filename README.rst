@@ -8,8 +8,8 @@ Description
 ***********
 
 This project is a Sphinx extension that simplifies the installation of a group
-of Sphinx extensions recommended by Canonical. It also provides a design override of
-the Furo theme for the creation of Canonical branded documentation.
+of Sphinx extensions recommended by Canonical. It also provides a design
+override of the Furo theme for the creation of Canonical branded documentation.
 
 This extension provides a minimal installation by default, and also offers a
 ``[full]`` optional installation which provides significant additional
