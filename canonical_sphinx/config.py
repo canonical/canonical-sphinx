@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 from sphinx.application import Sphinx
+import ast
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -161,6 +162,18 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
     # if builder == "dirhtml" or builder == "html":
     config.templates_path.append(str(theme_dir / "templates"))
     config.notfound_template = "404.html"
+
+    # PDF config
+
+    config.latex_engine = "xelatex"
+    config.latex_show_pagerefs = True
+    config.latex_show_urls = "footnote"
+
+
+    with open(str(theme_dir / "PDF/latex_elements_template.txt"), "rt") as file:
+        config.latex_config = file.read()
+
+    config.latex_elements = ast.literal_eval(config.latex_config.replace("$PROJECT", config.project))
 
     html_context = config.html_context
 
