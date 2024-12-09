@@ -43,16 +43,18 @@ def hello(people: Optional[List[Any]] = None) -> None:
             print(f"Hello {person}!")
 
 
-
-def copy_custom_files(app):
-    if app.builder.format == 'latex':
-        shutil.copytree(str(theme_dir / "PDF"), app.outdir, dirs_exist_ok = True)
+def copy_custom_files(app: Sphinx) -> None:
+    if app.builder.format == "latex":
+        shutil.copytree(str(theme_dir / "PDF"), app.outdir, dirs_exist_ok=True)
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
     """Configure the main extension and theme."""
     app.setup_extension("canonical_sphinx.config")
-    app.connect('builder-inited', copy_custom_files)
+    app.connect(  # pyright: ignore [reportUnknownMemberType]
+        "builder-inited",
+        copy_custom_files,
+    )
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,

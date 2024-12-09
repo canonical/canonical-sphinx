@@ -14,13 +14,13 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
+import ast
 import importlib.util
 import os
 from pathlib import Path
 from typing import Any, Dict
 
 from sphinx.application import Sphinx
-import ast
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -52,6 +52,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         "sphinxext.opengraph",
         "sphinxcontrib.jquery",
         "notfound.extension",
+        "sphinxcontrib.cairosvgconverter",
+        "sphinx_last_updated_by_git",
     ]
 
     for package in optional_packages:
@@ -169,11 +171,12 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
     config.latex_show_pagerefs = True
     config.latex_show_urls = "footnote"
 
-
-    with open(str(theme_dir / "PDF/latex_elements_template.txt"), "rt") as file:
+    with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    config.latex_elements = ast.literal_eval(config.latex_config.replace("$PROJECT", config.project))
+    config.latex_elements = ast.literal_eval(
+        config.latex_config.replace("$PROJECT", config.project),
+    )
 
     html_context = config.html_context
 
