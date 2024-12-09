@@ -91,6 +91,7 @@ With ``canonical-sphinx`` included in your project's
 Sphinx will configure and add defaults for ``sphinx-copybutton`` and
 ``sphinxcontrib-jquery``. The rest of the extensions from the optional
 ``[full]`` installation will be ignored.
+
 ***********
 
 This project is a Sphinx extension that simplifies the installation of a group
@@ -177,6 +178,8 @@ With ``canonical-sphinx`` included in your project's
 Sphinx will configure and add defaults for ``sphinx-copybutton`` and
 ``sphinxcontrib-jquery``. The rest of the extensions from the optional
 ``[full]`` installation will be ignored.
+
+=======
 
 .. _EditorConfig: https://editorconfig.org/
 .. _pre-commit: https://pre-commit.com/
