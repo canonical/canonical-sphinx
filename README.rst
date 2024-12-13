@@ -92,6 +92,8 @@ Sphinx will configure and add defaults for ``sphinx-copybutton`` and
 ``sphinxcontrib-jquery``. The rest of the extensions from the optional
 ``[full]`` installation will be ignored.
 
+=======
+
 .. _EditorConfig: https://editorconfig.org/
 .. _pre-commit: https://pre-commit.com/
 .. _ReadTheDocs: https://docs.readthedocs.io/en/stable/intro/import-guide.html
