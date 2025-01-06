@@ -142,3 +142,14 @@ tags = []
 
 github_username = "example"
 github_repository = "project"
+
+# PDF LaTeX configuration: a list of tuples
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-latex_documents
+latex_documents = [(
+    master_doc, # startdocname, master_doc is the default project root index
+    "",         # targetname: file name of the output PDF. Whitespace is not allowed.
+    project,    # title: use empty string if you want to use the title of the master_doc
+    author,     # author
+    "manual",   # theme
+    False,      # toctree_only
+)]
