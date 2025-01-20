@@ -34,6 +34,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         types=bool,
     )
     app.add_config_value("slug", default="", rebuild="env", types=str)
+    app.add_config_value("epub_build", default=False, rebuild="env", types=bool)
 
     extra_extensions = [
         "myst_parser",
@@ -161,9 +162,10 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
 
     # Issue: We don't have access to the builder here yet
     # Setting templates_path for epub makes the build fail
-    # if builder == "dirhtml" or builder == "html":
-    config.templates_path.append(str(theme_dir / "templates"))
-    config.notfound_template = "404.html"
+
+    if config.epub_build == False:
+        config.templates_path.append(str(theme_dir / "templates"))
+        config.notfound_template = "404.html"
 
     # PDF config
 
