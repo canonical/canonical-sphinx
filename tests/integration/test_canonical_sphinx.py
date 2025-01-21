@@ -21,7 +21,7 @@ import bs4
 import pytest
 
 
-@pytest.fixture()
+@pytest.fixture
 def example_project(request, tmp_path) -> Path:
     project_root = request.config.rootpath
     example_dir = project_root / "example"
@@ -76,7 +76,7 @@ def test_canonical_sphinx(example_project):
         "a",
         {"href": "https://discourse.example-project.com"},
     ).string.strip()
-    assert discourse_ref == "Forum"
+    assert discourse_ref == "Discourse"
 
     # Links to create issue and edit on Github
     github_issue = soup.find("div", {"class": "issue-github"}).findChild("a")
