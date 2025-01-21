@@ -163,7 +163,7 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
     # Issue: We don't have access to the builder here yet
     # Setting templates_path for epub makes the build fail
 
-    if config.epub_build == False:
+    if not config.epub_build:
         config.templates_path.append(str(theme_dir / "templates"))
         config.notfound_template = "404.html"
 
