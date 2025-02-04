@@ -29,6 +29,7 @@ full = [
     "sphinxcontrib-jquery",
     "sphinxext-opengraph",
     "pyspelling",
+    "sphinx-autobuild",
 ]
 dev = [
     "canonical-sphinx[full]",
@@ -53,7 +54,6 @@ types = [
 docs = [
     "canonical-sphinx[full]",
     "sphinx-lint",
-    "sphinx-autobuild",
 ]
 
 [build-system]
