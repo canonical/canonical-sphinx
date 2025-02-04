@@ -61,6 +61,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         try:
             if importlib.util.find_spec(package) is not None:
                 extra_extensions.append(package)
+                print(f"{package} found.\n{package} is now configured.")
             else:
                 print(f"{package} not found.\n{package} will not be configured.")
         except ModuleNotFoundError:  # noqa: PERF203
@@ -84,7 +85,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
+def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
     """Read user-provided values and setup defaults."""
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
