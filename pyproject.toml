@@ -41,7 +41,7 @@ dev = [
 ]
 lint = [
     "canonical-sphinx[full]",
-    "black==24.8.0",
+    "black==24.10.0",
     "codespell[toml]==2.3.0",
     "ruff==0.6.2",
     "yamllint==1.35.1"
