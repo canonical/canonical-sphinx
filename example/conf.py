@@ -146,11 +146,13 @@ github_repository = "project"
 # PDF LaTeX configuration: a list of tuples
 # Removing the variable will revert to the default configuration for latexpdf.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-latex_documents
-latex_documents = [(
-    "index", # startdocname, the project root index
-    f"{project.replace(' ', '_')}.tex", # targetname: file name of the output PDF. Whitespace is not allowed.
-    project,    # title: use empty string if you want to use the title of the master_doc
-    author,     # author
-    "manual",   # theme
-    False,      # toctree_only
-)]
+latex_documents = [
+    (
+        "index",  # startdocname, the project root index
+        f"{project.replace(' ', '_')}.tex",  # targetname: file name of the output PDF. Whitespace is not allowed.
+        project,  # title: use empty string if you want to use the title of the master_doc
+        author,  # author
+        "manual",  # theme
+        False,  # toctree_only
+    ),
+]
