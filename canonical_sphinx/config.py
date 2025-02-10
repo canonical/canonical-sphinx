@@ -34,6 +34,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         types=bool,
     )
     app.add_config_value("slug", default="", rebuild="env", types=str)
+    app.add_config_value("epub_build", default=False, rebuild="env", types=bool)
 
     extra_extensions = [
         "myst_parser",
@@ -60,6 +61,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         try:
             if importlib.util.find_spec(package) is not None:
                 extra_extensions.append(package)
+                print(f"{package} found.\n{package} is now configured.")
             else:
                 print(f"{package} not found.\n{package} will not be configured.")
         except ModuleNotFoundError:  # noqa: PERF203
@@ -83,7 +85,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
+def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
     """Read user-provided values and setup defaults."""
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
@@ -161,9 +163,10 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401
 
     # Issue: We don't have access to the builder here yet
     # Setting templates_path for epub makes the build fail
-    # if builder == "dirhtml" or builder == "html":
-    config.templates_path.append(str(theme_dir / "templates"))
-    config.notfound_template = "404.html"
+
+    if not config.epub_build:
+        config.templates_path.append(str(theme_dir / "templates"))
+        config.notfound_template = "404.html"
 
     # PDF config
 
