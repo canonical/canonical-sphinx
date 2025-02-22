@@ -16,5 +16,9 @@ html_context = {
     "github_url": "https://github.com/canonical/canonical-sphinx",
 }
 
+html_theme_options = {
+    "source_edit_link": "https://github.com/canonical/canonical-sphinx",
+}
+
 github_username = "canonical"
 github_repository = "canonical-sphinx"

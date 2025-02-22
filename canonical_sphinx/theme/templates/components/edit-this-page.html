@@ -1,0 +1,38 @@
+{% extends "furo/components/edit-this-page.html" %}
+
+{%- macro canonical_edit_button(url) -%}
+<div class="edit-this-page">
+  <a class="muted-link" href="{{ url }}" title="{{ _("Contribute to this page") }}">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">{{ _("Contribute to this page") }}</span>
+  </a>
+</div>
+{%- endmacro -%}
+
+{%- if repo_folder -%}
+  {%- set docs_dir = repo_folder.strip("/") -%}
+{%- else -%}
+  {%- set docs_dir = "docs" -%}
+{%- endif -%}
+
+{# Construct the links based on the domain. This could all be handled in config.py. #}
+{%- if pagename and page_source_suffix and theme_source_edit_link -%}
+  {%- if theme_source_edit_link.startswith("https://github.com") -%}
+    {%- set url = theme_source_edit_link + "/blob/" + build_branch + "/" + docs_dir+ "/" + pagename + page_source_suffix -%}
+  {%- elif theme_source_edit_link.startswith(
+      (
+        "https://launchpad.net",
+        "https://git.launchpad.net"
+      )
+    ) -%}
+    {%- set base_url = "https://git.launchpad.net/" -%}
+    {%- set repo_name = theme_source_edit_link.rstrip("/").rsplit("/",1)[1] -%}
+    {%- set url = base_url + repo_name  + "/tree/" + docs_dir + "/" + pagename + page_source_suffix + "?h=" + build_branch -%}
+  {%- else -%}
+    {{ warning("Unsupported repository for 'source_edit_link'") }}
+  {%- endif -%}
+{%- endif -%}
+
+{% block link_available -%}
+{{ canonical_edit_button(url) }}
+{%- endblock %}

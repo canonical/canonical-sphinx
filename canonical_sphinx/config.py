@@ -21,6 +21,9 @@ from pathlib import Path
 from typing import Any, Dict
 
 from sphinx.application import Sphinx
+from sphinx.config import Config
+from sphinx.errors import ConfigError
+from sphinx.util import logging
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -85,8 +88,11 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
+def config_inited(app: Sphinx, config: Config) -> None:  # noqa: PLR0915, PLR0912
     """Read user-provided values and setup defaults."""
+    # Get the Sphinx warning logger early
+    logger = logging.getLogger(__name__)
+
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
     config.exclude_patterns.extend(
@@ -189,8 +195,8 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
 
     values_and_defaults = [
         ("product_tag", "_static/tag.png"),
-        ("github_version", "main"),
-        ("github_folder", "docs"),
+        ("repo_default_branch", "main"),
+        ("repo_folder", "docs"),
         ("github_issues", "enabled"),
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
@@ -205,3 +211,49 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
     html_context["has_contributor_listing"] = has_contributor_listing
 
     config.html_js_files.extend(html_js_files)
+
+    # Warnings for old HTML context settings
+    if "github_folder" in config.html_context:
+        logger.warning(
+            "conf.py setting 'github_folder' is deprecated. Use 'repo_folder' instead.",
+        )
+        folder = config.html_context["github_folder"]
+        config.html_context["repo_folder"] = folder
+
+    if "github_version" in config.html_context:
+        logger.warning(
+            "conf.py setting 'github_version' is deprecated. Use 'repo_default_branch' "
+            "instead.",
+        )
+        default_branch = config.html_context["github_version"]
+        config.html_context["repo_default_branch"] = default_branch
+
+    # Errors for unsupported theme settings
+    if "top_of_page_buttons" in config.html_theme_options:
+        raise ConfigError(
+            "Unsupported config key 'html_theme_options.top_of_page_buttons."
+            "Try removing it and building again.",
+        )
+
+    if "source_view_link" in config.html_theme_options:
+        raise ConfigError(
+            "Unsupported config key 'html_theme_options.source_view_link'. "
+            "Try removing it and building again.",
+        )
+
+    # Soft-enable edit button so the view button is always hidden
+    config.html_theme_options["top_of_page_buttons"] = ["edit"]
+    # Sources aren't linked anywhere. Stop them generating to save on time+space.
+    config.html_copy_source = False
+    config.html_show_sourcelink = False
+
+    # Inject branch name into context
+    branch = config.html_context["repo_default_branch"]
+
+    if "READTHEDOCS" in os.environ:  # noqa: SIM102; `in` is orthogonal to `!=`
+        # Skip PR builds because ReadTheDocs can't read the target branch from
+        # GitHub actions
+        if os.environ["READTHEDOCS_VERSION_TYPE"] != "external":
+            branch = os.environ["READTHEDOCS_VERSION_NAME"]
+
+    html_context["build_branch"] = branch

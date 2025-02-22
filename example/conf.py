@@ -63,11 +63,11 @@ html_context = {
     "discourse": "https://discourse.example-project.com",
     # Change to the GitHub URL for your project
     "github_url": "https://github.com/example/project",
-    # Change to the branch for this version of the documentation
-    "github_version": "v9.9.9",
+    # Override to change the mainline branch to a different name
+    # "repo_default_branch": "main",
     # Change to the folder that contains the documentation
     # (usually "/" or "/docs/")
-    "github_folder": "/example/docs/",
+    "repo_folder": "/example/docs/",
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
     "github_issues": "enabled",
@@ -77,6 +77,11 @@ html_context = {
     # Controls whether to display the contributors for each file
     "display_contributors": False,
 }
+
+# Add the link to the doc's source repo here. Enables the edit button.
+# html_theme_options = {
+#    "source_edit_link": "https://github.com/canonical/sphinx-docs-starter-pack",
+# }
 
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
