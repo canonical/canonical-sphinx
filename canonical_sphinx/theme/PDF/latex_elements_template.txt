@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{titling}
 \usepackage{fontspec}
 \usepackage{tikz}
 \usepackage{changepage}
@@ -85,7 +86,7 @@
 
 \begin{adjustwidth}{8cm}{0pt}
 \begin{flushleft}
-    \huge \textcolor{black}{\textbf{}{\raggedright{$PROJECT}}}
+    \huge \textcolor{black}{\textbf{}{\raggedright{\thetitle}}}
 \end{flushleft}
 \end{adjustwidth}
 
