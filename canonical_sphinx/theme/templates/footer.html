@@ -91,41 +91,5 @@
    {% endif %}
   </div>
   <div class="right-details">
-
-    {# mod: replaced RTD icons with our links #}
-
-    {% if discourse %}
-    <div class="ask-discourse">
-      <a class="muted-link" href="{{ discourse }}">Ask a question on Discourse</a>
-    </div>
-    {% endif %}
-
-    {% if mattermost %}
-    <div class="ask-mattermost">
-      <a class="muted-link" href="{{ mattermost }}">Ask a question on Mattermost</a>
-    </div>
-    {% endif %}
-
-    {% if matrix %}
-    <div class="ask-matrix">
-      <a class="muted-link" href="{{ matrix }}">Ask a question on Matrix</a>
-    </div>
-    {% endif %}
-
-    {% if github_url and github_version and github_folder %}
-
-    {% if github_issues %}
-    <div class="issue-github">
-      <a class="muted-link" href="{{ github_url }}/issues/new?title=doc%3A+ADD+A+TITLE&body=DESCRIBE+THE+ISSUE%0A%0A---%0ADocument: {{ pagename }}{{ page_source_suffix }}">Open a GitHub issue for this page</a>
-    </div>
-    {% endif %}
-
-    <div class="edit-github">
-      <a class="muted-link" href="{{ github_url }}/edit/{{ github_version }}{{ github_folder }}{{ pagename }}{{ page_source_suffix }}">Edit this page on GitHub</a>
-    </div>
-    {% endif %}
-
-
-    </div>
   </div>
 </div>
