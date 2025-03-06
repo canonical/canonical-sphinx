@@ -177,9 +177,11 @@ def config_inited(app: Sphinx, config: Any) -> None:  # noqa: ANN401 PLR0915
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    config.latex_elements = ast.literal_eval(
-        config.latex_config.replace("$PROJECT", config.project),
-    )
+    if "latex_elements" not in config:
+
+        config.latex_elements = ast.literal_eval(
+            config.latex_config.replace("$PROJECT", config.project),
+        )
 
     html_context = config.html_context
 
