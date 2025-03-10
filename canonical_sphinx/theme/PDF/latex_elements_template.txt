@@ -116,5 +116,25 @@
       };
       \end{tikzpicture}
     }
+
+% Define new commands for breakable characters
+\let\origus\_
+\newcommand\allowbreaksafterunderscoreinliterals {%
+  \def\_{\discretionary{\origus}{}{\origus}}% breaks after underscore_ in literals
+}%
+
+\let\orighyphenwithbraces\sphinxhyphen{}
+\newcommand\allowbreaksaftersphinxhypheninliterals {%
+  \def\sphinxhyphen{\discretionary{-}{}{-}}% breaks after \sphinxhyphen - in literals
+}%
+
+% Add to Sphinx literal environment
+\makeatletter
+\g@addto@macro\sphinx@literal@nolig@list{%
+  \allowbreaksafterunderscoreinliterals
+  \allowbreaksaftersphinxhypheninliterals
+}%
+\makeatother
+
 ''',
 }
