@@ -23,11 +23,162 @@
 \usepackage{changepage}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{longtable}
+
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \definecolor{title}{RGB}{76, 17, 48}
 \definecolor{subtitle}{RGB}{116, 27, 71}
 \definecolor{label}{RGB}{119, 41, 100}
 \definecolor{copyright}{RGB}{174, 167, 159}
+\definecolor{class-red}{RGB}{139,0,0}
+\definecolor{code-io}{RGB}{238,238,238}
+\definecolor{red-io}{RGB}{192,0,0}
+\definecolor{orange-io}{RGB}{196,89,17}
+\definecolor{blue-io}{RGB}{47,84,150}
+
+\renewcommand{\arraystretch}{1.5}
+
+\tcbset{enhanced jigsaw, colback=black, colupper=white}
+
+\renewenvironment{quote}
+  {\begin{tcolorbox}[colback=code-io,
+                    colframe=code-io,
+                    colupper=black,
+                    boxsep=1mm,
+                    left=1mm,
+                    right=1mm,
+                    sharp corners,
+                    parbox=false]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxnote}[1]
+  {\begin{tcolorbox}[colframe=blue-io,
+                     colbacktitle=blue-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxhint}[1]
+  {\begin{tcolorbox}[colframe=blue-io,
+                     colbacktitle=blue-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinximportant}[1]
+  {\begin{tcolorbox}[colframe=blue-io,
+                     colbacktitle=blue-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxtip}[1]
+  {\begin{tcolorbox}[colframe=blue-io,
+                     colbacktitle=blue-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxwarning}[1]
+  {\begin{tcolorbox}[colframe=orange-io,
+                     colbacktitle=orange-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxattention}[1]
+  {\begin{tcolorbox}[colframe=orange-io,
+                     colbacktitle=orange-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxcaution}[1]
+  {\begin{tcolorbox}[colframe=orange-io,
+                     colbacktitle=orange-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxerror}[1]
+  {\begin{tcolorbox}[colframe=red-io,
+                     colbacktitle=red-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
+\renewenvironment{sphinxerror}[1]
+  {\begin{tcolorbox}[colframe=red-io,
+                     colbacktitle=red-io,
+                     colback=white,
+                     colupper=black,
+                     boxsep=1mm,
+                     left=1mm,
+                     right=1mm,
+                     toptitle=1.5mm,
+                     bottomtitle=1.5mm,
+                     sharp corners,
+                     title=\sphinxstrong{#1}]}
+  {\end{tcolorbox}}
+
 \makeatletter
 \def\tcb@finalize@environment{%
   \color{.}% hack for xelatex
