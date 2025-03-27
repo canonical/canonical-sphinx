@@ -179,7 +179,7 @@ def config_inited(app: Sphinx, config: Config) -> None:  # noqa: PLR0915, PLR091
     config.latex_engine = "xelatex"
     config.latex_show_pagerefs = True
     config.latex_show_urls = "footnote"
-    config.latex_table_style = ['standard', 'colorrows', 'booktabs']
+    config.latex_table_style = ["standard", "colorrows", "booktabs"]
 
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
