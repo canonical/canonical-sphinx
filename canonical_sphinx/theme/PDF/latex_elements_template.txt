@@ -186,7 +186,6 @@
 }
 \makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}\setmonofont[Color = 9ACD32, UprightFont = *-R, Extension = .ttf]{UbuntuMono}}{}
-\tcbset{enhanced jigsaw, colback=black, fontupper=\color{white}}
 \newtcolorbox{termbox}{use color stack, breakable, colupper=white, halign=flush left}
 \newenvironment{sphinxclassterminal}{\setmonofont[Color = white, UprightFont = *-R, Extension = .ttf]{UbuntuMono}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
 \newcommand{\dimtorightedge}{%
