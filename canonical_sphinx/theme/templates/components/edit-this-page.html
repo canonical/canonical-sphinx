@@ -9,16 +9,16 @@
 </div>
 {%- endmacro -%}
 
-{%- if repo_folder -%}
-  {%- set docs_dir = repo_folder.strip("/") -%}
+{%- if repo_folder != "" -%}
+  {%- set docs_dir = "/" + repo_folder.strip("/") -%}
 {%- else -%}
-  {%- set docs_dir = "docs" -%}
+  {%- set docs_dir = "" -%}
 {%- endif -%}
 
 {# Construct the links based on the domain. This could all be handled in config.py. #}
 {%- if pagename and page_source_suffix and theme_source_edit_link -%}
   {%- if theme_source_edit_link.startswith("https://github.com") -%}
-    {%- set url = theme_source_edit_link + "/blob/" + build_branch + "/" + docs_dir+ "/" + pagename + page_source_suffix -%}
+    {%- set url = theme_source_edit_link + "/blob/" + build_branch + docs_dir + "/" + pagename + page_source_suffix -%}
   {%- elif theme_source_edit_link.startswith(
       (
         "https://launchpad.net",
@@ -27,7 +27,7 @@
     ) -%}
     {%- set base_url = "https://git.launchpad.net/" -%}
     {%- set repo_name = theme_source_edit_link.rstrip("/").rsplit("/",1)[1] -%}
-    {%- set url = base_url + repo_name  + "/tree/" + docs_dir + "/" + pagename + page_source_suffix + "?h=" + build_branch -%}
+    {%- set url = base_url + repo_name  + "/tree" + docs_dir + "/" + pagename + page_source_suffix + "?h=" + build_branch -%}
   {%- else -%}
     {{ warning("Unsupported repository for 'source_edit_link'") }}
   {%- endif -%}
