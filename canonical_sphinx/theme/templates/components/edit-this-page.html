@@ -11,6 +11,9 @@
 
 {%- if repo_folder != "" -%}
   {%- set docs_dir = "/" + repo_folder.strip("/") -%}
+  {%- if docs_dir == "/" -%}
+    {%- set docs_dir = "" -%}
+  {%- endif -%}
 {%- else -%}
   {%- set docs_dir = "" -%}
 {%- endif -%}
