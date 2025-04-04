@@ -255,6 +255,6 @@ def config_inited(app: Sphinx, config: Config) -> None:  # noqa: PLR0915, PLR091
         # Skip PR builds because ReadTheDocs can't read the target branch from
         # GitHub actions
         if os.environ["READTHEDOCS_VERSION_TYPE"] != "external":
-            branch = os.environ["READTHEDOCS_VERSION_NAME"]
+            branch = os.environ["READTHEDOCS_GIT_IDENTIFIER"]
 
     html_context["build_branch"] = branch
