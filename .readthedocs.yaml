@@ -22,6 +22,7 @@ build:
     build:
       epub:
         - mkdir -p _temp
+        - mkdir -p $READTHEDOCS_OUTPUT/epub
         - python -m sphinx -T -W --keep-going -b epub -d _build/doctrees -D language=en -D epub_build=True -D version="test" ./docs _temp
         - mv _temp/*.epub $READTHEDOCS_OUTPUT/epub
 
