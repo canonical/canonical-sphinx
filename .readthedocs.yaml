@@ -18,6 +18,9 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.8"  # We still support Python 3.8 for now.
+  jobs:
+    epub:
+      - python -m sphinx -T -W --keep-going -b epub -d _build/doctrees -D language=en -D epub_build=True . $READTHEDOCS_OUTPUT/epub
 
 python:
   install:
