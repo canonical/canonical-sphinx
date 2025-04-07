@@ -21,7 +21,7 @@ build:
   jobs:
     build:
       epub:
-        - mkdir $READTHEDOCS_OUTPUT/raw
+        - mkdir -p $READTHEDOCS_OUTPUT/raw
         - python -m sphinx -T -W --keep-going -b epub -d _build/doctrees -D language=en -D epub_build=True -D version="test" ./docs $READTHEDOCS_OUTPUT/raw
         - mv $READTHEDOCS_OUTPUT/raw/*.epub $READTHEDOCS_OUTPUT/epub
 
