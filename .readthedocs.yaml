@@ -21,7 +21,8 @@ build:
   jobs:
     build:
       epub:
-        - python -m sphinx -T -W --keep-going -b epub -d _build/doctrees -D language=en -D epub_build=True -D version="test" ./docs $READTHEDOCS_OUTPUT/epub
+        - python -m sphinx -T -W --keep-going -b epub -d _build/doctrees -D language=en -D epub_build=True -D version="test" ./docs $READTHEDOCS_OUTPUT/raw
+        - mv $READTHEDOCS_OUTPUT/raw/*.epub $READTHEDOCS_OUTPUT/epub
 
 python:
   install:
