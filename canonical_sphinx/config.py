@@ -30,14 +30,24 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     """Perform the main configuration and theme-setting."""
     # These are options that the user can set on their "conf.py"
     # (many options are still missing).
-    app.add_config_value(
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
         "disable_feedback_button",
         default=False,
         rebuild="env",
         types=bool,
     )
-    app.add_config_value("slug", default="", rebuild="env", types=str)
-    app.add_config_value("epub_build", default=False, rebuild="env", types=bool)
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
+        "slug",
+        default="",
+        rebuild="env",
+        types=str,
+    )
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
+        "epub_build",
+        default=False,
+        rebuild="env",
+        types=bool,
+    )
 
     extra_extensions = [
         "myst_parser",
