@@ -13,6 +13,14 @@
   text-decoration: none;
 }
 
+.p-logo:hover {
+  text-decoration-color: white;
+}
+
+.p-logo:visited:hover {
+  text-decoration-color: white;
+}
+
 .p-logo-image {
   height: 44px;
   padding-right: 10px;
