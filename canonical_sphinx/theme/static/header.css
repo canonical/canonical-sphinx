@@ -14,11 +14,11 @@
 }
 
 .p-logo:hover {
-  text-decoration-color: white;
+  text-decoration: none;
 }
 
 .p-logo:visited:hover {
-  text-decoration-color: white;
+  text-decoration: none;
 }
 
 .p-logo-image {
