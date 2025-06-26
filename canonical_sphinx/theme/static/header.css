@@ -69,6 +69,11 @@ ul.p-navigation__links li a {
   width: 100%;
 }
 
+ul.p-navigation__links li div.p-logo {
+  line-height: 1.5rem;
+  padding: 1rem 0;
+}
+
 ul.p-navigation__links .p-navigation__link {
   color: #ffffff;
   font-weight: 300;
