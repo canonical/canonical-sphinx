@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
-from typing import List, Optional, Any, Dict
+from typing import Any
 
 from sphinx.application import Sphinx
 
@@ -35,7 +35,7 @@ except ImportError:  # pragma: no cover
         __version__ = "dev"
 
 
-def hello(people: Optional[List[Any]] = None) -> None:
+def hello(people: list[Any] | None = None) -> None:
     """Says hello."""
     print("Hello *craft team!")
     if people:
@@ -48,7 +48,7 @@ def copy_custom_files(app: Sphinx) -> None:
         shutil.copytree(str(theme_dir / "PDF"), app.outdir, dirs_exist_ok=True)
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """Configure the main extension and theme."""
     app.setup_extension("canonical_sphinx.config")
     app.connect(  # pyright: ignore [reportUnknownMemberType]
