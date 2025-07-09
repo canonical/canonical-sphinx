@@ -21,7 +21,7 @@
 {# Construct the links based on the domain. This could all be handled in config.py. #}
 {%- if pagename and page_source_suffix and theme_source_edit_link -%}
   {%- if theme_source_edit_link.startswith("https://github.com") -%}
-    {%- set url = theme_source_edit_link + "/blob/" + build_branch + docs_dir + "/" + pagename + page_source_suffix -%}
+    {%- set url = theme_source_edit_link + "/edit/" + build_branch + docs_dir + "/" + pagename + page_source_suffix -%}
   {%- elif theme_source_edit_link.startswith(
       (
         "https://launchpad.net",
