@@ -94,7 +94,7 @@ namespaces = false
 canonical_sphinx = ["theme/PDF/*.ttf", "theme/PDF/*.pdf", "theme/PDF/*.png", "theme/PDF/*.txt"]
 
 [tool.black]
-target-version = ["py38"]
+target-version = ["py310"]
 
 [tool.codespell]
 ignore-words-list = "buildd,crate,keyserver,comandos,ro,dedent,dedented"
@@ -166,7 +166,7 @@ strict = false
 
 [tool.ruff]
 line-length = 88
-target-version = "py38"
+target-version = "py310"
 src = ["canonical_sphinx", "tests"]
 extend-exclude = [
     "docs",
