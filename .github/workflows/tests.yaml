@@ -13,14 +13,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: conventional commits
-        uses: webiny/action-conventional-commits@v1.3.0
-        with:
-          allowed-commit-types: "build,chore,ci,docs,feat,fix,perf,refactor,style,test"
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
