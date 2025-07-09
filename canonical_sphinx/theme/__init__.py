@@ -14,13 +14,13 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx theme for Canonical documentation."""
-from typing import Any, Dict
+from typing import Any
 from pathlib import Path
 
 from sphinx.application import Sphinx
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """Add "canonical_sphinx_theme" as a valid html theme."""
     app.add_html_theme("canonical_sphinx_theme", str(Path(__file__).parent))
     return {

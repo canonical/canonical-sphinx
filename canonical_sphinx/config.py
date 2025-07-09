@@ -18,7 +18,7 @@ import ast
 import importlib.util
 import os
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any
 
 from sphinx.application import Sphinx
 from sphinx.config import Config
@@ -33,15 +33,15 @@ class SphinxConfig(Config):
     html_theme: str
     html_last_updated_fmt: str
     html_permalinks_icon: str
-    html_theme_options: Dict[str, Any]
+    html_theme_options: dict[str, Any]
     html_favicon: str
     notfound_template: str
     latex_engine: str
     latex_show_pagerefs: bool
     latex_show_urls: str
-    latex_table_style: List[str]
+    latex_table_style: list[str]
     latex_config: str
-    latex_elements: Dict[str, Any]
+    latex_elements: dict[str, Any]
     html_copy_source: bool
     html_show_sourcelink: bool
 
@@ -49,7 +49,7 @@ class SphinxConfig(Config):
         pass
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """Perform the main configuration and theme-setting."""
     # These are options that the user can set on their "conf.py"
     # (many options are still missing).
