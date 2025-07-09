@@ -2,10 +2,10 @@
 name = "canonical-sphinx"
 dynamic = ["version", "readme"]
 dependencies = [
-    "Sphinx==8.1.3",
-    "furo==2024.8.6",
-    "myst-parser==4.0.1",
-    "linkify-it-py==2.0.3",
+    "Sphinx",
+    "furo",
+    "myst-parser",
+    "linkify-it-py",
 ]
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -20,16 +20,16 @@ canonical-sphinx-hello = "canonical_sphinx:hello"
 
 [project.optional-dependencies]
 full = [
-    "canonical-sphinx-extensions==0.0.27",
-    "sphinx-copybutton==0.5.2",
-    "sphinx_design==0.6.1",
-    "sphinx-notfound-page==1.1.0",
-    "sphinx_reredirects==0.1.6",
-    "sphinx-tabs==3.4.7",
-    "sphinxcontrib-jquery==4.1",
-    "sphinxext-opengraph==0.10.0",
-    "pyspelling==2.10",
-    "sphinx-autobuild==2024.10.3",
+    "canonical-sphinx-extensions",
+    "sphinx-copybutton",
+    "sphinx_design",
+    "sphinx-notfound-page",
+    "sphinx_reredirects",
+    "sphinx-tabs",
+    "sphinxcontrib-jquery",
+    "sphinxext-opengraph",
+    "pyspelling",
+    "sphinx-autobuild",
 ]
 dev = [
     "canonical-sphinx[full]",
