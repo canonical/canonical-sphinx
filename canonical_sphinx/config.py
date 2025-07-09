@@ -220,14 +220,11 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     if (
         config.latex_elements == {}
     ):  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
-
         config.latex_elements = ast.literal_eval(config.latex_config)
 
     html_context = config.html_context
 
     disable_feedback_button = config.disable_feedback_button
-    if html_context.get("github_issues") and not disable_feedback_button:
-        html_js_files.append("github_issue_links.js")
 
     values_and_defaults = [
         ("product_tag", "_static/tag.png"),
@@ -243,6 +240,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
 
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
+
+    if html_context.get("github_issues") and not disable_feedback_button:
+        html_js_files.append("github_issue_links.js")
 
     html_context["has_contributor_listing"] = has_contributor_listing
 
