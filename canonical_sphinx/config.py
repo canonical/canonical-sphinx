@@ -18,7 +18,7 @@ import ast
 import importlib.util
 import os
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 from sphinx.application import Sphinx
 from sphinx.config import Config
@@ -26,18 +26,51 @@ from sphinx.errors import ConfigError
 from sphinx.util import logging
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+class SphinxConfig(Config):
+    """Expanded class for linting config options."""
+
+    notfound_urls_prefix: str
+    html_theme: str
+    html_last_updated_fmt: str
+    html_permalinks_icon: str
+    html_theme_options: dict[str, Any]
+    html_favicon: str
+    notfound_template: str
+    latex_engine: str
+    latex_show_pagerefs: bool
+    latex_show_urls: str
+    latex_table_style: list[str]
+    latex_config: str
+    latex_elements: dict[str, Any]
+    html_copy_source: bool
+    html_show_sourcelink: bool
+
+    def __init__(self) -> None:
+        pass
+
+
+def setup(app: Sphinx) -> dict[str, Any]:
     """Perform the main configuration and theme-setting."""
     # These are options that the user can set on their "conf.py"
     # (many options are still missing).
-    app.add_config_value(
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
         "disable_feedback_button",
         default=False,
         rebuild="env",
         types=bool,
     )
-    app.add_config_value("slug", default="", rebuild="env", types=str)
-    app.add_config_value("epub_build", default=False, rebuild="env", types=bool)
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
+        "slug",
+        default="",
+        rebuild="env",
+        types=str,
+    )
+    app.add_config_value(  # pyright: ignore [reportUnknownMemberType]
+        "epub_build",
+        default=False,
+        rebuild="env",
+        types=bool,
+    )
 
     extra_extensions = [
         "myst_parser",
@@ -88,7 +121,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def config_inited(app: Sphinx, config: Config) -> None:  # noqa: PLR0915, PLR0912
+def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, PLR0912
     """Read user-provided values and setup defaults."""
     # Get the Sphinx warning logger early
     logger = logging.getLogger(__name__)
@@ -184,7 +217,9 @@ def config_inited(app: Sphinx, config: Config) -> None:  # noqa: PLR0915, PLR091
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    if config.latex_elements == {}:
+    if (
+        config.latex_elements == {}
+    ):  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
 
         config.latex_elements = ast.literal_eval(config.latex_config)
 
