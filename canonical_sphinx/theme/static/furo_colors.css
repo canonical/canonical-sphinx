@@ -62,6 +62,7 @@ body {
     @media (prefers-color-scheme: dark) {
         body:not([data-theme="light"]) {
             --color-code-background: #202020;
+            --color-api-background: var(--color-code-background);
             --color-code-foreground: #d0d0d0;
             --color-foreground-secondary: var(--color-foreground-primary);
             --color-foreground-muted: #CDCDCD;
@@ -72,6 +73,7 @@ body {
             --color-sidebar-link-text: #f7f7f7;
             --color-sidebar-item-background--current: #666;
             --color-sidebar-item-background--hover: #333;
+            --color-api-background-hover: var(--color-sidebar-item-background--hover);
             --color-admonition-background: transparent;
             --color-admonition-title-background--note: var(--color-background-primary);
             --color-admonition-title-background--tip: var(--color-background-primary);
