@@ -18,7 +18,7 @@ html_context = {
     "license": {
         "name": "LGPL-3.0-only",
         "url": "test.com",
-    }
+    },
 }
 
 html_theme_options = {
