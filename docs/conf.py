@@ -4,16 +4,21 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 project = "canonical-sphinx"
-copyright = "2024, Canonical"
-author = "Canonical"
+copyright = "2024"
+author = "Canonical Ltd."
 
 extensions = [
     "canonical_sphinx",
 ]
 
 html_context = {
+    "author": author,
     "product_page": "github.com/canonical/canonical-sphinx",
     "github_url": "https://github.com/canonical/canonical-sphinx",
+    "license": {
+        "name": "LGPL-3.0-only",
+        "url": "test.com",
+    }
 }
 
 html_theme_options = {

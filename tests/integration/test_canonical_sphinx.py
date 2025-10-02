@@ -59,7 +59,7 @@ def test_canonical_sphinx(example_project):
     # Copyright
     copyright_ = soup.find("div", {"class": "copyright"}).string.strip()
     year = datetime.today().year
-    assert copyright_ == f"Copyright © {year}, Example Project Authors"
+    assert copyright_ == f"© {year} Example Project Authors"
 
     # Logo
     logo = soup.find("a", {"class": "p-logo"})
