@@ -40,7 +40,7 @@ html_title = project + " Docs"
 # curl -H 'Authorization: token <TOKEN>' \
 #   -H 'Accept: application/vnd.github.v3.raw' \
 #   https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
-copyright = f"{datetime.today().year}, {author}"
+copyright = f"{datetime.today().year}"
 
 # Set the path to your own static assets here
 html_static_path = ["_static"]
@@ -57,6 +57,18 @@ html_context = {
     # header) to ".sphinx/_static" and change the path here (start with "_static")
     # (default is the circle of friends)
     "product_tag": "_static/example-tag.png",
+    # Inherit the author value
+    "author": author,
+    # Change your product's license name and a link to its file.
+    # For the name, we recommend using the standard shorthand identifier from
+    # https://spdx.org/licenses
+    # For the URL, link directly to the canonical license statement, typically found on
+    # the product's home page or in its GitHub project.
+    #
+    "license": {
+        "name": "LGPL-3.0-only",
+        "url": "https://github.com/canonical/sphinx-docs-starter-pack/blob/main/LICENSE",
+    },
     # Change to the discourse instance you want to be able to link to
     # using the :discourse: metadata at the top of a file
     # (use an empty value if you don't want to link)
