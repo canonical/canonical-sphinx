@@ -77,20 +77,23 @@ def setup(app: Sphinx) -> dict[str, Any]:
     ]
 
     optional_packages = [
-        "sphinx_design",
-        "sphinx_tabs.tabs",
-        "sphinx_reredirects",
-        "canonical.youtube-links",
-        "canonical.related-links",
-        "canonical.custom-rst-roles",
-        "canonical.terminal-output",
-        "canonical.contributor-listing",
-        "sphinx_copybutton",
-        "sphinxext.opengraph",
-        "sphinxcontrib.jquery",
         "notfound.extension",
-        "sphinxcontrib.cairosvgconverter",
+        "sphinx_contributor_listing",
+        "sphinx_config_options",
+        "sphinx_copybutton",
+        "sphinx_design",
+        "sphinx_filtered_toctree",
         "sphinx_last_updated_by_git",
+        "sphinx_reredirects",
+        "sphinx_related_links",
+        "sphinx_roles",
+        "sphinx_tabs.tabs",
+        "sphinx_terminal",
+        "sphinx_ubuntu_images",
+        "sphinx_youtube_links",
+        "sphinxcontrib.cairosvgconverter",
+        "sphinxcontrib.jquery",
+        "sphinxext.opengraph",
     ]
 
     for package in optional_packages:
