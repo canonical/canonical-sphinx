@@ -29,15 +29,23 @@ The default extensions bundled into canonical-sphinx are:
 The optional extensions bundled into canonical-sphinx using the ``[full]``
 optional installation are:
 
-* `canonical-sphinx-extensions`_
-* `sphinx-copybutton <https://github.com/executablebooks/sphinx-copybutton>`_
-* `sphinx-design <https://github.com/executablebooks/sphinx-design>`_
-* `sphinx-notfound-page <https://github.com/readthedocs/sphinx-notfound-page>`_
-* `sphinx-reredirects <https://github.com/documatt/sphinx-reredirects>`_
-* `sphinx-tabs <https://github.com/executablebooks/sphinx-tabs>`_
+* `pyspelling <https://github.com/facelessuser/pyspelling>`_
 * `sphinxcontrib-jquery <https://github.com/sphinx-contrib/jquery/>`_
 * `sphinxext-opengraph <https://github.com/wpilibsuite/sphinxext-opengraph>`_
-* `pyspelling <https://github.com/facelessuser/pyspelling>`_
+* `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_
+* `sphinx-config-options <https://github.com/canonical/sphinx-config-options>`_
+* `sphinx-contributor-listing <https://github.com/canonical/sphinx-contributor-listing>`_
+* `sphinx-copybutton <https://github.com/executablebooks/sphinx-copybutton>`_
+* `sphinx-design <https://github.com/executablebooks/sphinx-design>`_
+* `sphinx-filtered-toctree <https://github.com/canonical/sphinx-filtered-toctree>`_
+* `sphinx-notfound-page <https://github.com/readthedocs/sphinx-notfound-page>`_
+* `sphinx-related-links <https://github.com/canonical/sphinx-related-links>`_
+* `sphinx-reredirects <https://github.com/documatt/sphinx-reredirects>`_
+* `sphinx-roles <https://github.com/canonical/sphinx-roles>`_
+* `sphinx-tabs <https://github.com/executablebooks/sphinx-tabs>`_
+* `sphinx-terminal <https://github.com/canonical/sphinx-terminal>`_
+* `sphinx-ubuntu-images <https://github.com/canonical/sphinx-ubuntu-images>`_
+* `sphinx-youtube-links <https://github.com/canonical/sphinx-youtube-links>`_
 
 Using canonical-sphinx
 **********************
@@ -98,5 +106,4 @@ Sphinx will configure and add defaults for ``sphinx-copybutton`` and
 .. _pre-commit: https://pre-commit.com/
 .. _ReadTheDocs: https://docs.readthedocs.io/en/stable/intro/import-guide.html
 .. _use this template: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
-.. _canonical-sphinx-extensions: https://github.com/canonical/canonical-sphinx-extensions
 .. _Sphinx configuration file: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-extensions

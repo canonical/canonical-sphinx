@@ -20,16 +20,23 @@ canonical-sphinx-hello = "canonical_sphinx:hello"
 
 [project.optional-dependencies]
 full = [
-    "canonical-sphinx-extensions",
-    "sphinx-copybutton",
-    "sphinx_design",
-    "sphinx-notfound-page",
-    "sphinx_reredirects",
-    "sphinx-tabs",
+    "pyspelling",
     "sphinxcontrib-jquery",
     "sphinxext-opengraph",
-    "pyspelling",
     "sphinx-autobuild",
+    "sphinx-config-options",
+    "sphinx-contributor-listing",
+    "sphinx-copybutton",
+    "sphinx_design",
+    "sphinx-filtered-toctree",
+    "sphinx-notfound-page",
+    "sphinx-related-links",
+    "sphinx-reredirects",
+    "sphinx-roles",
+    "sphinx-tabs",
+    "sphinx-terminal",
+    "sphinx-ubuntu-images",
+    "sphinx-youtube-links",
 ]
 dev = [
     "canonical-sphinx[full]",
