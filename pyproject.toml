@@ -34,7 +34,7 @@ full = [
     "sphinx-reredirects",
     "sphinx-roles>=0.1.0",
     "sphinx-tabs",
-    "sphinx-terminal>=0.1.0",
+    "sphinx-terminal>=0.1.1",
     "sphinx-ubuntu-images>=0.1.0",
     "sphinx-youtube-links>=0.1.0",
 ]
