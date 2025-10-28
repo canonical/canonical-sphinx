@@ -1,11 +1,11 @@
-****************
 canonical-sphinx
-****************
+================
 
 Extension and theme to create great Canonical-branded documentation.
 
+
 Description
-***********
+-----------
 
 This project is a Sphinx extension that simplifies the installation of a group
 of Sphinx extensions recommended by Canonical. It also provides a design
@@ -48,7 +48,7 @@ optional installation are:
 * `sphinx-youtube-links <https://github.com/canonical/sphinx-youtube-links>`_
 
 Using canonical-sphinx
-**********************
+----------------------
 
 To use canonical-sphinx in your project:
 
@@ -77,8 +77,9 @@ To use canonical-sphinx in your project:
 `Sphinx configuration file`_
 if you need to overwrite any defaults configured by canonical-sphinx.
 
+
 Using a subset of packages
-==========================
+--------------------------
 
 canonical-sphinx will identify and configure defaults for any package from the
 ``[full]`` installation.
@@ -86,7 +87,7 @@ canonical-sphinx will identify and configure defaults for any package from the
 For example, using the following ``requirements.txt`` file::
 
     canonical-sphinx
-    sphinx-copybutton
+    sphinx-terminal
     sphinxcontrib-jquery
 
 With ``canonical-sphinx`` included in your project's
@@ -96,11 +97,10 @@ With ``canonical-sphinx`` included in your project's
         "canonical_sphinx",
     ]
 
-Sphinx will configure and add defaults for ``sphinx-copybutton`` and
+Sphinx will configure and add defaults for ``sphinx-terminal`` and
 ``sphinxcontrib-jquery``. The rest of the extensions from the optional
 ``[full]`` installation will be ignored.
 
-=======
 
 .. _EditorConfig: https://editorconfig.org/
 .. _pre-commit: https://pre-commit.com/
