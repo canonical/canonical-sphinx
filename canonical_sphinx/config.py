@@ -80,7 +80,6 @@ def setup(app: Sphinx) -> dict[str, Any]:
         "notfound.extension",
         "sphinx_contributor_listing",
         "sphinx_config_options",
-        "sphinx_copybutton",
         "sphinx_design",
         "sphinx_filtered_toctree",
         "sphinx_last_updated_by_git",

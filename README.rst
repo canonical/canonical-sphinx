@@ -36,7 +36,6 @@ optional installation are:
 * `sphinx-config-options <https://github.com/canonical/sphinx-config-options>`_
 * `sphinx-contributor-listing
   <https://github.com/canonical/sphinx-contributor-listing>`_
-* `sphinx-copybutton <https://github.com/executablebooks/sphinx-copybutton>`_
 * `sphinx-design <https://github.com/executablebooks/sphinx-design>`_
 * `sphinx-filtered-toctree <https://github.com/canonical/sphinx-filtered-toctree>`_
 * `sphinx-notfound-page <https://github.com/readthedocs/sphinx-notfound-page>`_

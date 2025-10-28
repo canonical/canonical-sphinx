@@ -26,7 +26,6 @@ full = [
     "sphinx-autobuild",
     "sphinx-config-options>=0.1.0",
     "sphinx-contributor-listing>=0.1.0",
-    "sphinx-copybutton",
     "sphinx_design",
     "sphinx-filtered-toctree>=0.1.0",
     "sphinx-notfound-page",
@@ -34,7 +33,7 @@ full = [
     "sphinx-reredirects",
     "sphinx-roles>=0.1.0",
     "sphinx-tabs",
-    "sphinx-terminal>=0.1.1",
+    "sphinx-terminal>=1.0.0",
     "sphinx-ubuntu-images>=0.1.0",
     "sphinx-youtube-links>=0.1.0",
 ]
