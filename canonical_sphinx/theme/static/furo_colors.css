@@ -18,7 +18,6 @@ body {
     --color-sidebar-item-background--current: #ebebeb;
     --color-sidebar-item-background--hover: #f2f2f2;
     --toc-font-size: var(--font-size--small);
-    --color-admonition-title-background: var(--color-background-primary);
     --color-admonition-title--note: #24598F;
     --color-admonition-title--tip: #24598F;
     --color-admonition-title--important: #C7162B;
