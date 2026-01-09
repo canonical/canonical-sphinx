@@ -156,7 +156,7 @@ table.align-center {
     border-bottom: 1px solid #d9d9d9;
 }
 
-.admonition > .admonition-title {
+.admonition[class] > .admonition-title {
     background-color: var(--color-background-primary);
 }
 
