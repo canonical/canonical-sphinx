@@ -69,10 +69,7 @@ body {
             --color-sidebar-item-background--hover: #333;
             --color-api-background-hover: var(--color-sidebar-item-background--hover);
             --color-admonition-background: transparent;
-            --color-admonition-title-background--note: var(--color-background-primary);
-            --color-admonition-title-background--tip: var(--color-background-primary);
-            --color-admonition-title-background--important: var(--color-background-primary);
-            --color-admonition-title-background--caution: var(--color-background-primary);
+            --color-admonition-title-background: var(--color-background-primary);
             --color-admonition-title--note: #24598F;
             --color-admonition-title--tip: #24598F;
             --color-admonition-title--important: #C7162B;
