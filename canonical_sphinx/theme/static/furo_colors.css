@@ -22,6 +22,8 @@ body {
     --color-admonition-title-background--tip: var(--color-background-primary);
     --color-admonition-title-background--important: var(--color-background-primary);
     --color-admonition-title-background--caution: var(--color-background-primary);
+    --color-admonition-title-background--warning: var(--color-background-primary);
+    --color-admonition-title-background--seealso: var(--color-background-primary);
     --color-admonition-title--note: #24598F;
     --color-admonition-title--tip: #24598F;
     --color-admonition-title--important: #C7162B;
@@ -52,6 +54,8 @@ body {
         --color-admonition-title-background--tip: var(--color-background-primary);
         --color-admonition-title-background--important: var(--color-background-primary);
         --color-admonition-title-background--caution: var(--color-background-primary);
+        --color-admonition-title-background--warning: var(--color-background-primary);
+        --color-admonition-title-background--seealso: var(--color-background-primary);
         --color-admonition-title--note: #24598F;
         --color-admonition-title--tip: #24598F;
         --color-admonition-title--important: #C7162B;
