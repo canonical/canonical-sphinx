@@ -179,7 +179,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     config.html_permalinks_icon = "¶"
 
     if config.html_title == "":
-        config.html_theme_options = {"sidebar_hide_name": True}
+        config.html_theme_options["sidebar_hide_name"] = True
 
     theme_dir = Path(__file__).parent / "theme"
     theme_assets = theme_dir / "static"
