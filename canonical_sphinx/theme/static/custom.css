@@ -156,6 +156,11 @@ table.align-center {
     border-bottom: 1px solid #d9d9d9;
 }
 
+.admonition > .admonition-title {
+    background-color: var(--color-background-primary) !important;
+}
+
+
 /** Color for the "copy link" symbol next to headings **/
 
 a.headerlink {
