@@ -234,6 +234,8 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
         ("display_contributors", True),
+        ("enable_google_analytics", False),
+        ("google_analytics_id", ""),
     ]
 
     has_contributor_listing = "canonical.contributor-listing" in app.extensions
