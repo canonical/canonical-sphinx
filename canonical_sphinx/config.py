@@ -246,6 +246,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     if html_context.get("github_issues") and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
 
+    if html_context.get("enable_google_analytics"):
+        html_js_files.append("ga-bundle.js")
+
     html_context["has_contributor_listing"] = has_contributor_listing
 
     config.html_js_files.extend(html_js_files)
