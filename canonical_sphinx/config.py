@@ -195,6 +195,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         "header.css",
         "github_issue_links.css",
         "furo_colors.css",
+        "cookie-banner.css"
     ]
     config.html_css_files.extend(extra_css)
 
