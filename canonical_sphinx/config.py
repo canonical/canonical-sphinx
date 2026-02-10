@@ -174,7 +174,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
 
     config.notfound_urls_prefix = notfound_urls_prefix
 
-    config.html_theme = "canonical_sphinx_theme"
+    if config.html_theme == "alabaster":
+        config.html_theme = "canonical_sphinx_theme"
+
     config.html_last_updated_fmt = ""
     config.html_permalinks_icon = "¶"
 
