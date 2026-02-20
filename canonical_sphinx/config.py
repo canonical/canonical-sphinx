@@ -197,6 +197,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         "header.css",
         "github_issue_links.css",
         "furo_colors.css",
+        "cookie-banner.css",
     ]
     config.html_css_files.extend(extra_css)
 
@@ -236,6 +237,8 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
         ("display_contributors", True),
+        ("enable_google_analytics", False),
+        ("google_analytics_id", ""),
     ]
 
     has_contributor_listing = "canonical.contributor-listing" in app.extensions
@@ -245,6 +248,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
 
     if html_context.get("github_issues") and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
+
+    if html_context.get("enable_google_analytics"):
+        html_js_files.append("ga-bundle.js")
 
     html_context["has_contributor_listing"] = has_contributor_listing
 

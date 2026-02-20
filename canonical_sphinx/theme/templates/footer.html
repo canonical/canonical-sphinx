@@ -102,5 +102,8 @@
    {% endif %}
   </div>
   <div class="right-details">
+    {%- if enable_google_analytics and google_analytics_id %}
+    <div class="right-details"><a href="" class="js-revoke-cookie-manager muted-link">Manage your tracker settings</a></div>
+    {% endif %}
   </div>
 </div>
