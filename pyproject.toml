@@ -48,7 +48,7 @@ lint = [
 ]
 types = [
     "canonical-sphinx[full]",
-    "mypy[reports]==1.11.2",
+    "mypy[reports]==1.19.1",
     "pyright==1.1.378",
 ]
 docs = [
