@@ -43,7 +43,7 @@ lint = [
     "canonical-sphinx[full]",
     "black==24.8.0",
     "codespell[toml]==2.3.0",
-    "ruff==0.6.2",
+    "ruff==0.15.2",
     "yamllint==1.35.1"
 ]
 types = [
