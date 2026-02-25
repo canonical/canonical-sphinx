@@ -44,7 +44,7 @@ body {
         --color-background-hover: #666;
         --color-brand-primary: #fff;
         --color-brand-content: #69C;
-	--color-inline-code-background: var(--color-code-background);
+	    --color-inline-code-background: var(--color-code-background);
         --color-sidebar-link-text: #f7f7f7;
         --color-sidebar-item-background--current: #666;
         --color-sidebar-item-background--hover: #333;
@@ -71,7 +71,7 @@ body {
             --color-background-hover: #666;
             --color-brand-primary: #fff;
             --color-brand-content: #69C;
-	    --color-inline-code-background: var(--color-code-background);
+	        --color-inline-code-background: var(--color-code-background);
             --color-sidebar-link-text: #f7f7f7;
             --color-sidebar-item-background--current: #666;
             --color-sidebar-item-background--hover: #333;
