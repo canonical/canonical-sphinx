@@ -13,7 +13,7 @@ body {
     --color-brand-content: #06C;
     --color-api-background: var(--color-code-background);
     --color-api-background--hover: var(--color-sidebar-item-background--hover);
-    --color-inline-code-background: rgba(0,0,0,.03);
+    --color-inline-code-background: var(--color-code-background);
     --color-sidebar-link-text: #111;
     --color-sidebar-item-background--current: #ebebeb;
     --color-sidebar-item-background--hover: #f2f2f2;
@@ -44,6 +44,7 @@ body {
         --color-background-hover: #666;
         --color-brand-primary: #fff;
         --color-brand-content: #69C;
+	    --color-inline-code-background: var(--color-code-background);
         --color-sidebar-link-text: #f7f7f7;
         --color-sidebar-item-background--current: #666;
         --color-sidebar-item-background--hover: #333;
@@ -70,6 +71,7 @@ body {
             --color-background-hover: #666;
             --color-brand-primary: #fff;
             --color-brand-content: #69C;
+	        --color-inline-code-background: var(--color-code-background);
             --color-sidebar-link-text: #f7f7f7;
             --color-sidebar-item-background--current: #666;
             --color-sidebar-item-background--hover: #333;
