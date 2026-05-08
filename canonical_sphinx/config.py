@@ -249,8 +249,10 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     if "sphinx_copybutton" in app.extensions and config.copybutton_prompt_text == "":
         config.copybutton_prompt_text = r"\$ "
         config.copybutton_prompt_is_regexp = True
+        config.copybutton_line_continuation_character = "\\"
         config.html_context["copybutton_prompt_text"] = r"\$ "
         config.html_context["copybutton_prompt_is_regexp"] = True
+        config.html_context["copybutton_line_continuation_character"] = "\\"
 
     if html_context.get("github_issues") and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
