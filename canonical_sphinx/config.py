@@ -243,6 +243,15 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
 
+    # Strip "$ " shell prompts from the copy button so commands paste cleanly.
+    # Only override sphinx-copybutton's empty-string default; respect any
+    # explicit value the user set in conf.py.
+    if "sphinx_copybutton" in app.extensions and config.copybutton_prompt_text == "":
+        config.copybutton_prompt_text = r"\$ "
+        config.copybutton_prompt_is_regexp = True
+        config.html_context["copybutton_prompt_text"] = r"\$ "
+        config.html_context["copybutton_prompt_is_regexp"] = True
+
     if html_context.get("github_issues") and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
 
