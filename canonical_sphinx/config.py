@@ -252,14 +252,14 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
 
     # Warnings for old HTML context settings
     if "github_folder" in config.html_context:
-        logger.warning(
+        logger.info(
             "conf.py setting 'github_folder' is deprecated. Use 'repo_folder' instead.",
         )
         folder = config.html_context["github_folder"]
         config.html_context["repo_folder"] = folder
 
     if "github_version" in config.html_context:
-        logger.warning(
+        logger.info(
             "conf.py setting 'github_version' is deprecated. Use 'repo_default_branch' "
             "instead.",
         )
