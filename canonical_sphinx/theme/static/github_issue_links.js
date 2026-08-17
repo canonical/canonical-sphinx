@@ -24,6 +24,9 @@ window.onload = function() {
         + `*Reported+from%3A+${location.href}*`
     );
     link.target = "_blank";
+    if (feedback_link) {
+        link.href = feedback_link;
+    }
 
     const div = document.createElement("div");
     div.classList.add("github-issue-link-container");

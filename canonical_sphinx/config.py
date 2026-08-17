@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
+
 import ast
 import importlib.util
 import os
@@ -219,9 +220,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    if (
-        config.latex_elements == {}
-    ):  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
+    if config.latex_elements == {}:  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
         config.latex_elements = ast.literal_eval(config.latex_config)
 
     html_context = config.html_context
@@ -236,6 +235,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
         ("display_contributors", True),
+        ("feedback_link", ""),
     ]
 
     has_contributor_listing = "canonical.contributor-listing" in app.extensions
@@ -243,7 +243,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
 
-    if html_context.get("github_issues") and not disable_feedback_button:
+    if (
+        html_context.get("github_issues") or html_context.get("feedback_link")
+    ) and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
 
     html_context["has_contributor_listing"] = has_contributor_listing
