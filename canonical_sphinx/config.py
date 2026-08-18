@@ -290,7 +290,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     # Inject branch name into context
     branch = config.html_context["repo_default_branch"]
 
-    if "READTHEDOCS" in os.environ:  # noqa: SIM102; `in` is orthogonal to `!=`
+    if "READTHEDOCS" in os.environ:  # noqa: SIM102
         # Skip PR builds because ReadTheDocs can't read the target branch from
         # GitHub actions
         if os.environ["READTHEDOCS_VERSION_TYPE"] != "external":
