@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Sphinx configuration, extension and theme for Canonical documentation."""
+
 import ast
 import importlib.util
 import os
@@ -236,6 +237,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
         ("discourse", "https://discourse.ubuntu.com"),
         ("sequential_nav", "none"),
         ("display_contributors", True),
+        ("feedback_link", ""),
     ]
 
     has_contributor_listing = "canonical.contributor-listing" in app.extensions
@@ -243,7 +245,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     for value, default in values_and_defaults:
         html_context.setdefault(value, default)
 
-    if html_context.get("github_issues") and not disable_feedback_button:
+    if (
+        html_context.get("github_issues") or html_context.get("feedback_link")
+    ) and not disable_feedback_button:
         html_js_files.append("github_issue_links.js")
 
     html_context["has_contributor_listing"] = has_contributor_listing
@@ -288,7 +292,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     # Inject branch name into context
     branch = config.html_context["repo_default_branch"]
 
-    if "READTHEDOCS" in os.environ:  # noqa: SIM102; `in` is orthogonal to `!=`
+    if "READTHEDOCS" in os.environ:  # noqa: SIM102
         # Skip PR builds because ReadTheDocs can't read the target branch from
         # GitHub actions
         if os.environ["READTHEDOCS_VERSION_TYPE"] != "external":
