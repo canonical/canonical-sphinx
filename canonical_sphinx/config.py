@@ -220,7 +220,9 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    if config.latex_elements == {}:  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
+    if (
+        config.latex_elements == {}
+    ):  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
         config.latex_elements = ast.literal_eval(config.latex_config)
 
     html_context = config.html_context
