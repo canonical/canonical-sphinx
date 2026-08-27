@@ -127,6 +127,12 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     # Get the Sphinx warning logger early
     logger = logging.getLogger(__name__)
 
+    logger.info(
+        "canonical-sphinx is deprecated and will be removed from the Sphinx Stack in a future release. "
+        "Please switch to the Ulwazi theme. Guidance is available in the Sphinx Stack documentation. "
+        "https://documentation.ubuntu.com/sphinx-stack/how-to/switch-to-ulwazi/",
+    )
+
     config.myst_enable_extensions.update(["substitution", "deflist", "linkify"])
 
     config.exclude_patterns.extend(
@@ -220,9 +226,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
     with Path.open(theme_dir / "PDF/latex_elements_template.txt", "r+") as file:
         config.latex_config = file.read()
 
-    if (
-        config.latex_elements == {}
-    ):  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
+    if config.latex_elements == {}:  # pyright: ignore [reportUnnecessaryComparison] type: # ignore[comparison-overlap]
         config.latex_elements = ast.literal_eval(config.latex_config)
 
     html_context = config.html_context
