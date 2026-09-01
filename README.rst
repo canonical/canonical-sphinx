@@ -1,3 +1,14 @@
+    **This extension is deprecated.**
+
+    canonical-sphinx 0.7 will be the final major release of this extension. It
+    will receive security and bug fixes through the end of the 27.04 release
+    cycle, when development will cease entirely.
+
+    All Canonical Sphinx projects should now use the Ulwazi theme. Please make
+    the switch at your nearest convenience. Guidance is available in
+    `Switch to the Ulwazi theme
+    <https://documentation.ubuntu.com/sphinx-stack/how-to/switch-to-ulwazi/>`__.
+
 ****************
 canonical-sphinx
 ****************
