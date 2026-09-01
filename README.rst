@@ -7,7 +7,7 @@
     All Canonical Sphinx projects should now use the Ulwazi theme. Please make
     the switch at your nearest convenience. Guidance is available in
     `Switch to the Ulwazi theme
-    <https://documentation.ubuntu.com/sphinx-stack/how-to/switch-to-ulwazi/>`__.
+    <https://documentation.ubuntu.com/sphinx-stack/latest/how-to/switch-to-ulwazi/>`__.
 
 ****************
 canonical-sphinx
