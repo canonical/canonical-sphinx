@@ -129,7 +129,7 @@ def config_inited(app: Sphinx, config: SphinxConfig) -> None:  # noqa: PLR0915, 
 
     logger.info(
         "canonical-sphinx is deprecated and will be removed from the Sphinx Stack in a future release. "
-        "Please switch to the Ulwazi theme. Guidance is available in the Sphinx Stack documentation. "
+        "Please switch to the Ulwazi theme. Guidance is available in the Sphinx Stack documentation: "
         "https://documentation.ubuntu.com/sphinx-stack/how-to/switch-to-ulwazi/",
     )
 
