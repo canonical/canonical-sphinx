@@ -1,0 +1,27 @@
+name: Zizmor
+
+on:
+  push:
+    branches:
+      - main
+      - "feature/*"
+      - "hotfix/*"
+      - "release/*"
+      - "renovate/*"
+  pull_request:
+
+jobs:
+  zizmor:
+    name: GitHub Actions security audit
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
+        with:
+          persist-credentials: false
+      - name: Run zizmor
+        uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8  # v0.5.2
+        with:
+          upload-sarif: true

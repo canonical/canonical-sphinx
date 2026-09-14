@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
         with:
           fetch-depth: 0
       - name: conventional commits
-        uses: webiny/action-conventional-commits@v1.3.0
+        uses: webiny/action-conventional-commits@8bc41ff4e7d423d56fa4905f6ff79209a78776c7  # v1.3.0
         with:
           allowed-commit-types: "build,chore,ci,docs,feat,fix,perf,refactor,style,test"
