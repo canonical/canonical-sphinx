@@ -408,6 +408,18 @@ p code.literal {
     color: #BB5400;
 }
 
+.highlight-diff {
+    .gd {
+        color: var(--color-diff-deleted-foreground);
+        background-color: var(--color-diff-deleted-background);
+    }
+
+    .gi {
+        color: var(--color-diff-added-foreground);
+        background-color: var(--color-diff-added-background);
+    }
+}
+
 /* Only relevant for specific PDF generation issues */
 
 .rubric>.hclass2 {
